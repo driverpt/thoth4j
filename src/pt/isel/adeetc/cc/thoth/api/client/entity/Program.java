@@ -1,19 +1,16 @@
 package pt.isel.adeetc.cc.thoth.api.client.entity;
 
-public class Program {
-    private int    id;
+import pt.isel.adeetc.cc.thoth.api.client.ThothEntity;
+import pt.isel.adeetc.cc.thoth.api.client.ThothException;
+
+public class Program extends ThothEntity<Integer> {
     private String shortName;
     private String fullName;
 
-    public Program( int id, String shortName, String fullName ) {
-        super();
-        this.id = id;
+    public Program( String baseUrl, int id, String shortName, String fullName ) {
+        super(baseUrl, id);
         this.shortName = shortName;
         this.fullName = fullName;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getShortName() {
@@ -24,15 +21,8 @@ public class Program {
         return fullName;
     }
 
-    public void setId( int id ) {
-        this.id = id;
-    }
-
-    public void setShortName( String shortName ) {
-        this.shortName = shortName;
-    }
-
-    public void setFullName( String fullName ) {
-        this.fullName = fullName;
+    @Override
+    protected void getDetails() throws ThothException {
+        // None Available
     }
 }
