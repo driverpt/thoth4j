@@ -1,6 +1,6 @@
 package pt.isel.adeetc.cc.thoth.api.client;
 
-class ThothConstants {
+public class ThothConstants {
     private ThothConstants() {
     }
 
