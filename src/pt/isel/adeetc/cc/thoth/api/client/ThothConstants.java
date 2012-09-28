@@ -14,5 +14,7 @@ public class ThothConstants {
 
     public static final String THOTH_API_CLASSES_ROOT           = "classes";
 
+    public static final String THOTH_API_PROGRAMS_ROOT          = "programs";
+
     public static final String THOTH_VERSION_PREFIX             = "v";
 }

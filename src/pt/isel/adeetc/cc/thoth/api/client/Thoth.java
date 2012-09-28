@@ -4,9 +4,10 @@ import java.net.HttpURLConnection;
 import java.util.LinkedList;
 import java.util.List;
 
-import pt.isel.adeetc.cc.thoth.api.client.entity.CourseClass;
-
 import com.github.kevinsawicki.http.HttpRequest;
+
+import pt.isel.adeetc.cc.thoth.api.client.entity.CourseClass;
+import pt.isel.adeetc.cc.thoth.api.client.entity.Program;
 
 // TODO: Make this code more OO
 public class Thoth {
@@ -26,11 +27,7 @@ public class Thoth {
 
     public List<CourseClass> getAllClasses() throws ThothException {
         String classesUrl = ThothUtils.appendUrl(baseUrl, ThothConstants.THOTH_API_CLASSES_ROOT);
-        HttpRequest request = HttpRequest.get(classesUrl);
-        String jsonResponse = request.body();
-        if (request.code() != HttpURLConnection.HTTP_OK) {
-            throw new ThothException("Invalid Http Response");
-        }
+        String jsonResponse = getBodyAsStringFromUrl( classesUrl );
 
         return CourseClass.getCoursesFromJSON(jsonResponse, baseUrl);
     }
@@ -47,11 +44,27 @@ public class Thoth {
         return filteredClasses;
     }
 
+    public List<Program> getAllPrograms() throws ThothException {
+        String programsUrl = ThothUtils.appendUrl( baseUrl, ThothConstants.THOTH_API_PROGRAMS_ROOT );
+        String jsonResponse = getBodyAsStringFromUrl( programsUrl );
+        
+        return Program.getProgramsFromJSON(jsonResponse, baseUrl);
+    }
+    
     public int getCurrentWorkingVersion() {
         return currentWorkingVersion;
     }
     
     String getBaseUrl() {
         return baseUrl;
+    }
+    
+    private static String getBodyAsStringFromUrl(String url) throws ThothException{
+        HttpRequest request = HttpRequest.get(url);
+        if (request.code() != HttpURLConnection.HTTP_OK) {
+            throw new ThothException("Invalid Http Response");
+        }
+        String response = request.body();
+        return response;
     }
 }
