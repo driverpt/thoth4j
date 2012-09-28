@@ -24,9 +24,6 @@ public class CourseClass extends ThothEntity<Integer> {
     private String              className;
     private String              mainTeacherShortName;
 
-    // Monitor used for Locking
-    private Object              _lock = new Object();
-
     private CourseClassDetailed details;
 
     private static class CourseClassDetailed {
@@ -37,7 +34,7 @@ public class CourseClass extends ThothEntity<Integer> {
 
     @Override
     protected void getDetails() throws ThothException {
-        String classUrl = ThothUtils.appendUrl(baseUrl, ThothConstants.THOTH_API_CLASSES_ROOT, String.valueOf(getId()));
+        String classUrl = ThothUtils.appendUrl(getBaseUrl(), ThothConstants.THOTH_API_CLASSES_ROOT, String.valueOf(getId()));
         HttpRequest request = HttpRequest.get(classUrl);
         if (request.code() != HttpURLConnection.HTTP_OK) {
             throw new ThothException(MessageFormat.format("Invalid Response Status Code: {0}\nURL: {1}",
@@ -142,8 +139,8 @@ public class CourseClass extends ThothEntity<Integer> {
         try {
             return "CourseClassSimple [id=" + getId() + ", fullName=" + fullName + ", courseUnitShortName="
                     + courseUnitShortName + ", lectiveSemesterShortName=" + lectiveSemesterShortName + ", className="
-                    + className + ", mainTeacherShortName=" + mainTeacherShortName + ", _lock=" + _lock + ", details="
-                    + details + ", key=" + key + ", baseUrl=" + baseUrl + ", getCourseUnitId()=" + getCourseUnitId()
+                    + className + ", mainTeacherShortName=" + mainTeacherShortName + ", details="
+                    + details + ", key=" + key + ", baseUrl=" + getBaseUrl() + ", getCourseUnitId()=" + getCourseUnitId()
                     + ", getLectiveSemesterId()=" + getLectiveSemesterId() + ", getMaxGroupSize()=" + getMaxGroupSize()
                     + "]";
         } catch (ThothException e) {

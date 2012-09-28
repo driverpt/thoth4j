@@ -5,7 +5,7 @@ public abstract class ThothEntity<K> {
     protected K key;
     
     // TODO: This will be final, it is modifiable for debugging purposes
-    protected String baseUrl;
+    private String baseUrl;
     
     protected volatile boolean detailRetrieved = false;
     
@@ -29,5 +29,9 @@ public abstract class ThothEntity<K> {
 
     public void setId(K key) {
         this.key = key;
+    }
+    
+    protected String getBaseUrl() {
+        return baseUrl;
     }
 }
