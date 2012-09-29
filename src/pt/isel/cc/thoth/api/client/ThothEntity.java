@@ -1,4 +1,4 @@
-package pt.isel.adeetc.cc.thoth.api.client;
+package pt.isel.cc.thoth.api.client;
 
 public abstract class ThothEntity<K> {
     

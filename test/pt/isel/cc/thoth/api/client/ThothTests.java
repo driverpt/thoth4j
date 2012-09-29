@@ -1,4 +1,4 @@
-package pt.isel.adeetc.cc.thoth.api.client;
+package pt.isel.cc.thoth.api.client;
 
 import java.text.MessageFormat;
 
@@ -6,6 +6,8 @@ import junit.framework.TestCase;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import pt.isel.cc.thoth.api.client.Thoth;
 
 public class ThothTests extends TestCase {
 

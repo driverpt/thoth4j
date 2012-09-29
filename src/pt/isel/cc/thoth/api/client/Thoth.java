@@ -1,4 +1,4 @@
-package pt.isel.adeetc.cc.thoth.api.client;
+package pt.isel.cc.thoth.api.client;
 
 import java.net.HttpURLConnection;
 import java.util.LinkedList;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.github.kevinsawicki.http.HttpRequest;
 
-import pt.isel.adeetc.cc.thoth.api.client.entity.CourseClass;
-import pt.isel.adeetc.cc.thoth.api.client.entity.Program;
+import pt.isel.cc.thoth.api.client.entity.CourseClass;
+import pt.isel.cc.thoth.api.client.entity.Program;
 
 // TODO: Make this code more OO
 public class Thoth {

@@ -1,4 +1,4 @@
-package pt.isel.adeetc.cc.thoth.api.client.entity;
+package pt.isel.cc.thoth.api.client.entity;
 
 public class CourseUnit {
     private String shortName;

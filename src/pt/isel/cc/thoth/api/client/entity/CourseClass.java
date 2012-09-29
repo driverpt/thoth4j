@@ -1,4 +1,4 @@
-package pt.isel.adeetc.cc.thoth.api.client.entity;
+package pt.isel.cc.thoth.api.client.entity;
 
 import java.net.HttpURLConnection;
 import java.text.MessageFormat;
@@ -10,10 +10,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import pt.isel.adeetc.cc.thoth.api.client.ThothConstants;
-import pt.isel.adeetc.cc.thoth.api.client.ThothEntity;
-import pt.isel.adeetc.cc.thoth.api.client.ThothException;
-import pt.isel.adeetc.cc.thoth.api.client.ThothUtils;
+import pt.isel.cc.thoth.api.client.ThothConstants;
+import pt.isel.cc.thoth.api.client.ThothEntity;
+import pt.isel.cc.thoth.api.client.ThothException;
+import pt.isel.cc.thoth.api.client.ThothUtils;
 
 import com.github.kevinsawicki.http.HttpRequest;
 
