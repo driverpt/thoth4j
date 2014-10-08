@@ -7,4 +7,4 @@ env:
     - secure: "cr8GOrzoOG56MEL0IMtDTFM14HJNC3o51oW9kbQ8WfWqhbhT73AdNPFFw1QtoSXxYQQLA3rWJ40Q5FMYAihjuuYGr0SIAqF13Se7vclfFcskOkjN5/K1ocJxMGW94V0VJQfcimIifbFzUR2KXitTMAeloCgFKJ/QAbQQDJ8A0ao="
 
 after_success:
-  - mvn clean cobertura:cobertura coveralls:report
+  - mvn clean cobertura:cobertura coveralls:cobertura
