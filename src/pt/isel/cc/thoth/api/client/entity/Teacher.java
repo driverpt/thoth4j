@@ -63,7 +63,7 @@ public class Teacher extends ThothEntity< Integer > {
     @Override
     protected void getDetails() throws ThothException {
         super.getDetails();
-        String teacherUrl = ThothUtils.appendUrl(baseUrl, ThothConstants.THOTH_API_TEACHERS_ROOT, String.valueOf(getId()));
+        String teacherUrl = ThothUtils.appendUrl(getBaseUrl(), ThothConstants.THOTH_API_TEACHERS_ROOT, String.valueOf(getId()));
         HttpRequest request = HttpRequest.get(teacherUrl);
         if (request.code() != HttpURLConnection.HTTP_OK) {
             throw new ThothException(MessageFormat.format("Invalid Response Status Code: {0}\nURL: {1}",
