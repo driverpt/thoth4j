@@ -6,7 +6,6 @@
     <artifactId>thoth-api-client</artifactId>
     <version>0.1</version>
     <name>Thoth API Client</name>
-    <packaging>jar</packaging>
     <url>https://github.com/driverpt/thoth4j</url>
 
     <issueManagement>
@@ -28,8 +27,17 @@
         <developerConnection>scm:git:git@github.com:driverpt/thoth4j.git</developerConnection>
     </scm>
 
+    <developers>
+        <developer>
+            <name>Luís Miguel Dias Duarte</name>
+            <email>lduarte@luisduarte.net</email>
+            <url>http://www.luisduarte.net</url>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
@@ -58,11 +66,32 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <instrumentation>
+                        <excludes>
+                            <exclude>**/*$*</exclude>
+                            <exclude>**/*$</exclude>
+                        </excludes>
+                    </instrumentation>
+                    <format>xml</format>
+                    <maxmem>256m</maxmem>
+                    <aggregate>true</aggregate>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>2.2.0</version>
             </plugin>
         </plugins>
     </build>
