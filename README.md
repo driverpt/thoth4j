@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/driverpt/thoth4j.png?label=ready&title=Ready)](https://waffle.io/driverpt/thoth4j)
 thoth4j
 =======
 
